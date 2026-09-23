@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CSTester/.vs
+/CSTester/CSTester/bin/Debug/net10.0
+/CSTester/CSTester/obj
+/Pylib/__pycache__
