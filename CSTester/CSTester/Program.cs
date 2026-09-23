@@ -11,15 +11,8 @@ internal class Program {
             // Update this string with your exact Python version and path!
             // Windows example: @"C:\Users\<User>\AppData\Local\Programs\Python\Python311\python311.dll"
             // Mac/Linux example: "/usr/local/lib/libpython3.11.dylib" or "libpython3.11.so"
-            Console.Write("enter 1 for desktop, 2 for laptop: ");
-            string choice = Console.ReadLine();
-            int option = int.Parse(choice);
-            Runtime.PythonDLL = option switch
-            {
-                1 => @"c:\Users\USER\AppData\Local\Python\pythoncore-3.14-64\python314.dll",
-                2 => @"c:\Users\doron\AppData\Local\Python\pythoncore-3.14-64\python314.dll",
-                _ => throw new ArgumentOutOfRangeException("Invalid option")
-            };
+            string user = Environment.UserName;
+            Runtime.PythonDLL = $@"c:\Users\{user}\AppData\Local\Python\pythoncore-3.14-64\python314.dll";
 
             // 2. Resolve paths for the python folder
             // We find 'pyfolder' assuming it lives parallel to or outside your executable's execution directory
